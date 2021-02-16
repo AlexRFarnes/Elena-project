@@ -408,6 +408,7 @@ a {
     align-items: center;
     justify-content: space-around;
     transition: all 1s ease;
+    padding-bottom: 20rem;
   }
 
   .nav__link {
@@ -421,7 +422,8 @@ a {
     position: relative;
     z-index: 1;
   }
-  .burger__check {
+
+  /* .burger__check {
     position: absolute;
     top: 35%;
     right: 5.5%;
@@ -431,23 +433,24 @@ a {
     z-index: 100;
     cursor: pointer;
     opacity: 0;
-  }
+  } */
 
-  .burger__check:checked + .nav__list {
+  .nav-open {
     transform: translateX(-100%);
   }
 
-  .burger__check:checked ~ .burger .burger__line {
+  /* burger with the class of toggle */
+  .toggle .burger__line {
     background: transparent;
   }
 
-  .burger__check:checked ~ .burger .burger__line::before {
+  .toggle .burger__line::before {
     transform: rotateZ(405deg);
     top: 0;
     background: #fff;
   }
 
-  .burger__check:checked ~ .burger .burger__line::after {
+  .toggle .burger__line::after {
     transform: rotateZ(-405deg);
     top: 0;
     background: #fff;
