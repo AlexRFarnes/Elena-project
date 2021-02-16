@@ -31,7 +31,7 @@ html {
   --header-3: calc(3rem + 1vw);
   --header-4: calc(2.4rem + 1vw);
   --text: calc(1.5rem + 1vw);
-  --big-text: calc(2.4rem + 1vw);
+  --big-text: calc(6rem + 1vw);
 
   /* Colors */
   --special-color: #906272;
@@ -80,6 +80,34 @@ h5 {
 a {
   text-decoration: none;
   color: #000;
+}
+
+.btn {
+  padding: 2rem 8rem;
+  border: 3px solid #000;
+  transition: all 0.3s;
+  background: #fff;
+  cursor: pointer;
+  font-family: "Ruhl", sans-serif;
+}
+.btn--lg {
+  width: 100%;
+}
+
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.btn--accent {
+  background: var(--special-color);
+  color: #fff;
+  border: 3px solid var(--special-color);
+}
+
+.btn--accent:hover {
+  background: #fff;
+  color: var(--special-color);
 }
 
 /* Utility */
@@ -166,15 +194,7 @@ a {
 }
 
 .hero__link {
-  padding: 2rem 8rem;
-  border: 3px solid #000;
   margin-bottom: 4rem;
-  transition: all 0.3s;
-}
-
-.hero__link:hover {
-  background: #000;
-  color: #fff;
 }
 
 .hero__images {
@@ -280,6 +300,68 @@ a {
   color: #fff;
   text-align: center;
   padding: 3rem;
+}
+
+/* Contact */
+.contact {
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-wrapper {
+  flex: 3 1 40rem;
+}
+
+.form__title {
+  margin-bottom: 5rem;
+}
+
+.form__span {
+  font-size: var(--big-text);
+  color: var(--special-color);
+}
+
+.label {
+  margin-right: 3rem;
+}
+
+.input {
+  margin-bottom: 5rem;
+  background: var(--bg-color);
+  color: #fff;
+  border: none;
+}
+
+.input:focus {
+  outline: var(--special-color);
+  outline-width: 2px;
+}
+
+.contact__img {
+  flex: 1 1 40rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 5%;
+  flex-wrap: wrap;
+}
+
+.footer__copy {
+  flex: 6 1 40rem;
+  font-size: calc(1.2rem + 1vw);
+}
+.footer__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 40rem;
 }
 
 /* ANIMATIONS */
@@ -422,5 +504,33 @@ a {
 
   .gallery__header {
     display: none;
+  }
+
+  /* Contact */
+  .contact__img {
+    display: none;
+  }
+
+  /* Footer */
+
+  .footer__copy {
+    text-align: center;
+
+    order: 2;
+  }
+  .footer__list {
+    padding-bottom: 3rem;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 106em) {
+  html {
+    --header-1: 3rem;
+    --header-2: 5rem;
+    --header-3: 4rem;
+    --header-4: 3rem;
+    --text: 3rem;
+    --big-text: 8rem;
   }
 }
