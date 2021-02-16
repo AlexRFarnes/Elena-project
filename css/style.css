@@ -1,0 +1,216 @@
+/* Global styles  */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "Ruhl";
+  src: url("../fonts/FrankRuhlLibre-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Ruhl Medium";
+  src: url("../fonts/FrankRuhlLibre-Medium.ttf");
+}
+@font-face {
+  font-family: "Vibes";
+  src: url("../fonts/GreatVibes-Regular.ttf");
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  /* Font sizes */
+  --header-1: calc(2rem + 1vw);
+  --header-2: calc(3.5rem + 1vw);
+  --header-3: calc(3rem + 1vw);
+  --header-4: calc(2.4rem + 1vw);
+  --text: calc(1.5rem + 1vw);
+  --big-text: calc(2.4rem + 1vw);
+
+  /* Colors */
+  --special-color: #906272;
+  --gray-color: #525252;
+  --bg-color: #414141;
+}
+
+body {
+  font-family: "Ruhl", sans-serif;
+  animation: opening 1s ease-in-out;
+}
+
+h1 {
+  font-family: "Vibes", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Font size */
+h1 {
+  font-size: var(--header-1);
+}
+
+li,
+button,
+label,
+input,
+p,
+a {
+  font-size: var(--text);
+}
+
+h2 {
+  font-size: var(--header-2);
+}
+h3 {
+  font-size: var(--header-3);
+}
+h4,
+h5 {
+  font-size: var(--header-4);
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Utility */
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MAIN */
+
+/* Nav */
+
+.main-header {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  /* Fixes the box shadow not showing because of the background color of the next section */
+  position: relative;
+}
+
+.nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  min-height: 10vh;
+  padding: 2rem 0;
+}
+
+#logo {
+  flex: 1 1 20rem;
+}
+
+.nav__list {
+  display: flex;
+  flex: 1 1 20rem;
+  justify-content: space-between;
+}
+
+/* Hero */
+
+.hero {
+  min-height: 90vh;
+  width: 95%;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.hero__intro {
+  flex: 2 1 40rem;
+  text-align: center;
+}
+
+.hero__title {
+  padding-top: 3rem;
+}
+
+.hero__text {
+  padding: 5rem 10rem;
+}
+
+.hero__link {
+  padding: 2rem 8rem;
+  border: 3px solid #000;
+  margin-bottom: 4rem;
+  transition: all 0.3s;
+}
+
+.hero__link:hover {
+  background: #000;
+  color: #fff;
+}
+
+.hero__images {
+  flex: 1 1 40rem;
+  background: linear-gradient(#dad8dd, #dad1d4);
+  position: relative;
+  z-index: 1;
+}
+
+.hero__elena {
+  width: 100%;
+  height: 100%;
+  /* Keeps the image ratio */
+  object-fit: cover;
+}
+
+.plant {
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  z-index: -1;
+  animation: plantEntrance 1.5s ease-in-out 0.5s forwards,
+    plantShake 3.5s ease-in-out infinite alternate-reverse 2s;
+  transform: translateY(10%) rotateZ(-10deg) rotateX(90deg);
+  transform-origin: bottom;
+  backface-visibility: hidden;
+}
+
+.plant2 {
+  left: 40%;
+}
+
+/* ANIMATIONS */
+
+@keyframes opening {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes plantEntrance {
+  from {
+    transform: translateY(10%) rotateZ(-10deg) rotateX(90deg);
+  }
+  to {
+    transform: translateY(0) rotateZ(0deg) rotateX(0deg);
+  }
+}
+
+@keyframes plantShake {
+  from {
+    transform: rotateZ(-2deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
