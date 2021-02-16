@@ -24,6 +24,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 
   /* Font sizes */
   --header-1: calc(2rem + 1vw);
